@@ -11,6 +11,18 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "justMyCode": true
+        },
+        {
+            "name": "Atlas PixelArt Fixer",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/Tools/PixelArt/SpriteMargin.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": 
+            [
+                "--help"
+            ]
         }
     ]
 }
