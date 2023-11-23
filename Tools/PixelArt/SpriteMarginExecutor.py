@@ -29,14 +29,16 @@ def read_args() -> tuple[io.TextIOWrapper, Engine]:
 
     return atlas, engine
 
+def fix_atlas_unity(atlas: str):
+    fix_atlas(atlas, Engine.Unity)
+
 def fix_atlas(atlas: str, engine: Engine):
     engineFixer: BaseEngineFixer 
     
-    match engine:
-        case Engine.Unity:
-            engineFixer = UnityFixer(atlas)
-        case _:
-            engineFixer = None
+    if engine == Engine.Unity:
+        engineFixer = UnityFixer(atlas)
+    else:
+        engineFixer = None
 
     if engineFixer is None:
         raise Exception("Engine not supported.")
